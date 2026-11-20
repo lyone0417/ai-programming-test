@@ -23,6 +23,7 @@ def test_names_and_boundaries(tmp_path):
     ("민지,-1", "점수가 0~100 밖"),
     ("민지,101", "점수가 0~100 밖"),
 ])
+
 def test_invalid_row_is_recorded(tmp_path, row, reason):
     kept, skipped = read_csv(tmp_path, row + "\n하나,80\n")
     assert kept == [("하나", 80)]
